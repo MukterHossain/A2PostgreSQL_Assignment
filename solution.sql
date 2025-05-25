@@ -35,8 +35,6 @@ INSERT INTO rangers (name, region) VALUES
 ('Bob White', 'River Delta'),
 ('Carol King', 'Mountain Range'),
 ('Akib Triko', 'Southern Hills'),
-('Kris Oks', 'Soloman Island'),
-('Nippo Shepos', 'Safari Park'),
 ('Tariq Bilal', 'Rema Kalenga');
 
 
@@ -54,7 +52,7 @@ INSERT INTO species (common_name, scientific_name, discovery_date, conservation_
 
 
 -- Insert data in sightings table
-INSERT INTO sightings(species_id, ranger_id,location, sighing_time, notes) VALUES
+INSERT INTO sightings(species_id, ranger_id, location, sighing_time, notes) VALUES
 (1, 1, 'Peak Ridge', '2024-05-10 07:45:00', 'Camera trap image captured'),
 (2, 2, 'Bankwood Area', '2024-05-15 09:10:00', 'Juvenile seen'),
 (3, 3, 'Bamboo Grove East', '2024-05-12 16:20:00', 'Feeding observed'),
@@ -63,7 +61,7 @@ INSERT INTO sightings(species_id, ranger_id,location, sighing_time, notes) VALUE
 (4, 4, 'North Cliffs', '2024-05-09 08:55:00', 'Heard distant calls'),
 (3, 5, 'Eagle Pass', '2024-05-18 18:30:00', 'Juvenile seen'),
 (2, 3, 'Willow Marsh', '2024-05-13 07:05:00', 'Fresh scat found'),
-(1, 7, 'Cedar Trail Pass', '2024-05-18 18:30:00', 'Brief visual comfirmation');
+(1, 5, 'Cedar Trail Pass', '2024-05-18 18:30:00', 'Brief visual comfirmation');
 
 
 
@@ -83,9 +81,18 @@ SELECT count(DISTINCT species_id) FROM sightings;
 SELECT * FROM sightings WHERE location LIKE '%Pass';
 
 
-
-
 --  Problem 4
+SELECT r.name, COUNT(s.sighting_id)
+ FROM
+  rangers r LEFT JOIN
+  sightings s ON r.ranger_id = s.ranger_id
+  GROUP BY 
+  r.name;
+
+
+
+
+
 
 SELECT * FROM rangers;
 SELECT * FROM species;
