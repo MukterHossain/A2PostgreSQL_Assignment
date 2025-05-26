@@ -97,7 +97,7 @@ sightings  ON species.species_id = sightings.species_id
 WHERE sightings.species_id IS NULL;
  
 
---  Problem 6   
+--  Problem 6   to_char(sightings.sighting_time, 'YYYY-MM-DD HH24:MI:SS')
 SELECT species.common_name,   sightings.sighting_time, rangers.name
  FROM sightings 
  JOIN 
@@ -114,7 +114,18 @@ SET conservation_status = 'Historic'
 WHERE discovery_date < '1800-01-01';
 
 
-
+--  Problem 8
+SELECT s.sighting_id, v.name, t.common_name, s.sighting_time,
+CASE 
+    WHEN extract(HOUR FROM s.sighting_time::TIMESTAMP) < 12 THEN 'Morning'
+    WHEN extract(HOUR FROM s.sighting_time::TIMESTAMP) BETWEEN 12 AND 17 THEN 'Afternoon' 
+    ELSE  'Evening'
+END AS time_of_day
+FROM sightings s
+JOIN
+rangers v ON s.ranger_id = v.ranger_id
+JOIN
+species t ON s.species_id = t.species_id;
 
 
 --  Problem 9
@@ -123,3 +134,13 @@ WHERE ranger_id NOT IN(
 SELECT DISTINCT ranger_id FROM sightings
 );
 
+
+SELECT * FROM rangers;
+SELECT * FROM species;
+SELECT * FROM sightings;
+
+
+
+DROP TABLE rangers;
+DROP TABLE species;
+DROP TABLE sightings;
