@@ -21,17 +21,16 @@
 
 ### 3. What is purpose of a database schema in PostgreSQL?
    **উত্তর:**
-    #### Primary Key:
+    **Primary Key:** --
     **Primary Key** একটি টেবিলের এমন কলাম বা কলাম সমষ্টি, যা প্রতিটি রেকর্ডকে ইউনিকভাবে চিহ্নিত করে। এটি কখনো **NULL** হতে পারে না। 
-    #### উদাহরণ: 
+    **উদাহরণ:** -- 
     CREATE TABLE users (
     Id SERIAL PRIMAR KEY,
     Name VARCHAR(50)
     ); 
-
-    #### Foreign Key:
+    **Foreign Key:**
     **Foreign Key** একটি টেবিলের এমন কলাম যা অন্য টেবিলের Primary Key এর উপর নির্ভরশীল। এটি টেবিলগুলোর মধ্যে সম্পর্ক স্থাপন করে। 
-    #### উদাহরণ: 
+     **উদাহরণ:** 
     CREATE TABLE posts(
     Id SERIAL PRIMARY KEY,
     Users_id INT REFERENCES users(id)
