@@ -58,6 +58,7 @@ SELECT * FROM users WHERE age > 20;
 ### 7. How can you modify data using **UPDATE** statements?
 **উত্তর:**
 SQL ডাটাবেজে **UPDATE** একটি গুরুত্বপূর্ণ কি ওয়ার্ড। UPDATE দিয়ে টেবিলের বিদ্যমান ডেটা পরিবর্তন করা যায়।
+
 **উদাহরণ**:
 UPDATE users
 SET name = ‘Siraj Uddin’
@@ -69,10 +70,12 @@ WHERE id = 2;
 ### 8. What is the significance of the JOIN operation, and how does it work in PostgreSQL?
 **উত্তর**:
 SQL ডাটাবেজে JOIN  দিয়ে একাধিক টেবিলের মধ্যে সম্পর্ক তৈরি করে ডেটা  একসাথে দেখা যায়।
+
 **Common types**:
 * INNER JOIN
 * LEFT JOIN
 * RIGHT JOIN
+  
 **উদাহরণ**:
 SELECT users.name, posts.name
 FROM users
