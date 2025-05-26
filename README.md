@@ -3,7 +3,7 @@
 
 --
 
-## Answer 5 question in bangla
+## Answer 7 question in bangla
 
 ### 1. What is PostgreSQL?
 **উত্তর:**
@@ -54,3 +54,28 @@ SELECT * FROM users WHERE age > 20;
   SELECT * FROM users LIMIT 3 OFFSET 5 ;
 
 * এই কোয়েরি 6 থেকে 8 পর্যন্ত রেকর্ড দেখাবে।
+
+### 7. How can you modify data using **UPDATE** statements?
+**উত্তর:**
+SQL ডাটাবেজে **UPDATE** একটি গুরুত্বপূর্ণ কি ওয়ার্ড। UPDATE দিয়ে টেবিলের বিদ্যমান ডেটা পরিবর্তন করা যায়।
+**উদাহরণ**:
+UPDATE users
+SET name = ‘Siraj Uddin’
+WHERE id = 2;
+* এখানে  id = 2 ইজারের নাম পরিবর্তন করা হচ্ছে।
+
+
+
+### 8. What is the significance of the JOIN operation, and how does it work in PostgreSQL?
+**উত্তর**:
+SQL ডাটাবেজে JOIN  দিয়ে একাধিক টেবিলের মধ্যে সম্পর্ক তৈরি করে ডেটা  একসাথে দেখা যায়।
+**Common types**:
+* INNER JOIN
+* LEFT JOIN
+* RIGHT JOIN
+**উদাহরণ**:
+SELECT users.name, posts.name
+FROM users
+JOIN posts ON users.id = posts.user_id
+
+*এখানে  দুইটি টেবিল থেকে সম্পর্কযুক্ত তথ্য  নিচ্ছি।
