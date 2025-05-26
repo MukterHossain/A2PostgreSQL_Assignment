@@ -23,7 +23,7 @@
 **উত্তর:**
 **Primary Key:** --
 **Primary Key** একটি টেবিলের এমন কলাম বা কলাম সমষ্টি, যা প্রতিটি রেকর্ডকে ইউনিকভাবে চিহ্নিত করে। এটি কখনো **NULL** হতে পারে না। 
-**উদাহরণ:** -- 
+* **উদাহরণ:** 
 CREATE TABLE users (
 Id SERIAL PRIMAR KEY,
 Name VARCHAR(50)
@@ -31,7 +31,7 @@ Name VARCHAR(50)
 
 **Foreign Key:**
 **Foreign Key** একটি টেবিলের এমন কলাম যা অন্য টেবিলের Primary Key এর উপর নির্ভরশীল। এটি টেবিলগুলোর মধ্যে সম্পর্ক স্থাপন করে। 
-**উদাহরণ:** 
+* **উদাহরণ:** 
 CREATE TABLE posts(
 Id SERIAL PRIMARY KEY,
 Users_id INT REFERENCES users(id)
@@ -40,7 +40,7 @@ Users_id INT REFERENCES users(id)
 ### 5. Explain the purpose of the **WHERE** clause in a **SELECT** statement.
 **উত্তর:**
 **WHERE** ক্লজ ব্যবহার করা হয় টেবিল থেকে নির্দিষ্ট শর্ত অনুযায়ী ডেটা ফিল্টার করতে।
-**উদাহরণ**: 
+* **উদাহরণ**: 
 SELECT * FROM users WHERE age > 20;
 
 * এই কোয়েরি শুধুমাত্র 20 বছরের উপরে যাদের বয়স তাদের রেকর্ড দেখাবে।
